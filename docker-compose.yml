@@ -1,6 +1,11 @@
 services:
   openclaw:
     image: ghcr.io/coollabsio/openclaw:latest
+    depends_on:
+      - browser
+
+  browser:
+    image: ghcr.io/browserless/chromium:latest
     restart: unless-stopped
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
