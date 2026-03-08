@@ -1,13 +1,12 @@
 services:
   openclaw:
     image: ghcr.io/coollabsio/openclaw:latest
-    container_name: openclaw
     restart: unless-stopped
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
-      OPENCLAW_PORT: 18789
+      OPENCLAW_GATEWAY_TOKEN: ${OPENCLAW_GATEWAY_TOKEN}
     volumes:
-      - /root/.openclaw:/root/.openclaw
+      - /data/openclaw:/data
     expose:
-      - "18789"
+      - "3000"
