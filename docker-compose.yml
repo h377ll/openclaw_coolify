@@ -13,7 +13,6 @@ services:
       OPENCLAW_CONFIG_PATH: /data/.openclaw/openclaw.json
     volumes:
       - /data/openclaw:/data
-      - /data/openclaw/.openclaw/openclaw.json:/data/.openclaw/openclaw.json:ro
     expose:
       - '8080'
     networks:
