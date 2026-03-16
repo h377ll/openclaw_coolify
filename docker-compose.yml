@@ -11,6 +11,10 @@ services:
       OPENCLAW_STATE_DIR: /data/.openclaw
       OPENCLAW_WORKSPACE_DIR: /data/workspace
       OPENCLAW_CONFIG_PATH: /data/.openclaw/openclaw.json
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=coolify
+      - traefik.http.services.openclaw.loadbalancer.server.port=8080
     volumes:
       - /data/openclaw:/data
     expose:
