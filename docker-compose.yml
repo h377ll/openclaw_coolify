@@ -17,6 +17,7 @@ services:
       - traefik.http.services.openclaw.loadbalancer.server.port=8080
     volumes:
       - /data/openclaw:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     expose:
       - '8080'
     networks:
